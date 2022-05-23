@@ -459,8 +459,3 @@ id,company,opinion,date,rating,source,score,sentiment
 457,XPLORE,No room for parking your car. Personal polite and very friendly. A little bit noisy exam room,01/01/2020,2,google,0.2195,positive
 458,XPLORE,"Nice, clean and easily accessible facilities.",01/01/2021,5,google,0.7845,positive
 459,XPLORE,"A super company, with very skilled people",01/01/2018,5,google,0.5994,positive
-<<<<<<< HEAD
-=======
-460,TEST,"Good benefits, Friendly management and environment, No con , no work life balance",31/10/2016,4,glassdoor,0.6486,positive
-461,TEST,"Good benefits, Friendly management and environment, No con , no work life balance",31/10/2016,4,glassdoor,0.6486,positive
->>>>>>> a5fb854a66aa9a09a926730cc3f801ed9d8e2856
