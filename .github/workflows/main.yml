@@ -24,6 +24,10 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+        
+      - name: Install dependencies
+        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+             python -m nltk.downloader punkt stopwords
 
       - name: Update local files
         run: python3 MAIN/scraper_1p.py
