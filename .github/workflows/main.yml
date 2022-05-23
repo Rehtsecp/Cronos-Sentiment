@@ -28,7 +28,7 @@ jobs:
           python -m nltk.downloader vader_lexicon
 
       - name: Update local files
-        run: python3 MAIN/scraper_1p.py
+        run: python3 scraper_1p.py
 
       - name: Commit files
         run: |
