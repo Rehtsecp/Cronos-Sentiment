@@ -23,7 +23,7 @@ jobs:
           python-version: 3.9
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: if [ -f requirements.txt ]; then pip install -r requirements.txt; fi python -m nltk.downloader vader_lexicon
 
       - name: Update local files
         run: python3 MAIN/scraper_1p.py
