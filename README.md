@@ -1,6 +1,3 @@
-![Cronos Logo](https://postimg.cc/KRSx6WLv)
-
-
 # Cronos-Sentiment
 
 Repository for our automated process of our internship assignment of Epic Data. <br>
