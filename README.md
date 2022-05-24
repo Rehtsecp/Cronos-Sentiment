@@ -9,3 +9,7 @@ Link to our full project: [Cronos Sentiment Analysis](https://github.com/davidwo
 3. **requirements.txt**: A text file containing the required packages for running both scripts, needed for running our workflow.
 4. **cronos_reviews.csv**: Our csv file containing all our gathered reviews, from different sources.
 
+## Usage
+This is an repository with an GitHub Workflow, accesible via the **Actions** tab.
+
+The Workflow is called **'Update data'**, this workflow will check for new reviews **every sunday at 00:00**.
