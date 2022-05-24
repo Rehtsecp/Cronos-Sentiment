@@ -4,19 +4,28 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from googletrans import Translator
 import pandas as pd
+from nltk.sentiment import SentimentIntensityAnalyzer
+from tqdm.notebook import tqdm
+
+sia = SentimentIntensityAnalyzer()
+
+df = pd.read_csv("final_reviews.csv")
+id = df["id"].iloc[-1]
 
 # Function for extracting the page
-def extract(page):
+def extract():
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36"
     }  # For additional information with request
     # List of URL's with Cronos Review page on Glassdoor, it contains a link to the FR, NL & EN version of the page.
-    url = f"https://nl.glassdoor.be/Reviews/Cronos-Reviews-E871033_{page}.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=nld"
+    # url = f"hhttps://nl.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=nld"
+    # url = f"https://www.glassdoor.co.uk/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=eng"
+    url = f"https://fr.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=fra"
     r = requests.get(url, headers=headers)
     soup = BeautifulSoup(r.content, "html.parser")
     return soup
 
-
+ 
 # Function for transforming the page content to a dictionary
 def transform(soup):
     # Div with all the reviews inside
@@ -52,29 +61,39 @@ def transform(soup):
         translator = Translator()
         opinion_tr = translator.translate(opinion).text  # Get only the translated text
 
-        # Put in an dictionary
+        new_id = int(id) + 1  # Assigning an id
+
+        # Giving the opinion an compound score and sentiment
+        score = sia.polarity_scores(opinion_tr)["compound"]
+        if score >= 0.05:
+            sentiment = "positive"
+        elif score <= -0.05:
+            sentiment = "negative"
+        else:
+            sentiment = "neutral"
+
+        # Putting it in a dictionary
         review = {
-            "rating": rating,
+            "\n" "id": new_id,
+            "company": "Cronos",
             "opinion": opinion_tr,
             "date": date_clean_str,
+            "rating": rating,
             "source": "glassdoor",
-            "company": "cronos",  # CHANGE THIS
+            "score": score,
+            "sentiment": sentiment,
         }
-        reviewlist.append(review)  # Adding the dictionary to a list
+        reviewlist.append(review)
     return
 
 
 reviewlist = []
 
-# Going over the pages
-for i in range(0, 11):
-    print(f"Getting page {i}")
-    c = extract(f"P{i}")
-    transform(c)
+
+c = extract()
+transform(c)
 
 # Writing to a CSV
 df = pd.DataFrame(reviewlist)  # List to pandas dataframe
 print(df.head())  # Printing the first few entries of the pandas dataframe, to check
-df.to_csv(
-    "./CSV_Files/reviews_gd_en.csv", index=False
-)  # Converting pandas dataframe to a CSV file
+df.to_csv("final_reviews.csv", index=False, mode="a", header=False)  # Converting pandas dataframe to a CSV file
