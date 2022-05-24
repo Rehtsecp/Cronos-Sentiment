@@ -4,8 +4,8 @@ name: Update data
 
 # Controls when the workflow will run
 on:
-#   schedule:
-#     - cron: "*/2 * * * *"
+  schedule:
+    - cron: "0 0 * * 0" #“At 00:00 on Sunday.”
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -30,7 +30,7 @@ jobs:
           
         # Scraping the reviews for Cronos on Glassdoor
       - name: Scraping reviews
-        run: python3 scraper_1p.py
+        run: python3 gd_scraper.py
         
         # Auto update CSV file
       - name: Commit files
@@ -38,7 +38,10 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Update data" -a
-          
+      
+      - name: Check duplicates
+        run: python3 check_dup.py
+
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:

@@ -75,7 +75,7 @@ def transform(soup):
         # Putting it in a dictionary
         review = {
             "\n" "id": new_id,
-            "company": "Cronos",
+            "company": "TEST",
             "opinion": opinion_tr,
             "date": date_clean_str,
             "rating": rating,
