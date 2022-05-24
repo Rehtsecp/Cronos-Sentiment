@@ -1,4 +1,4 @@
-![Cronos Logo](rehtsecp.github.com/Cronos-Sentiment/img/logo.png)
+![Cronos Logo](https://postimg.cc/KRSx6WLv)
 
 
 # Cronos-Sentiment
