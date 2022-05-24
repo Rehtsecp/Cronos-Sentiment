@@ -22,4 +22,4 @@ The workflow is called **'Update data'**, this workflow will check for new revie
 5. After waiting a couple seconds, you'll see an orange loading icon, that means the process is starting
 ![Start Workflow](img/w3.png)
 1. Wait a max. of 1 minute to allow it to complete the whole process of scraping, assigning score/sentiment and to update the csv file.
-![Complete](img/workflow4.png)
+![Complete](img/w4.png)
