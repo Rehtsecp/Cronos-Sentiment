@@ -9,7 +9,7 @@ from tqdm.notebook import tqdm
 
 sia = SentimentIntensityAnalyzer()
 
-df = pd.read_csv("final_reviews.csv")
+df = pd.read_csv("cronos_reviews.csv")
 id = df["id"].iloc[-1]
 
 # Function for extracting the page
@@ -96,4 +96,4 @@ transform(c)
 # Writing to a CSV
 df = pd.DataFrame(reviewlist)  # List to pandas dataframe
 print(df.head())  # Printing the first few entries of the pandas dataframe, to check
-df.to_csv("final_reviews.csv", index=False, mode="a", header=False)  # Converting pandas dataframe to a CSV file
+df.to_csv("cronos_reviews.csv", index=False, mode="a", header=False)  # Converting pandas dataframe to a CSV file

@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv("final_reviews.csv") 
+df = pd.read_csv("cronos_reviews.csv") 
 
 old_count = df.shape[0]
 
@@ -19,4 +19,4 @@ dups = old_count - new_count
 if dups <= 0: print('No duplicates found!')
 else: print(f'{dups} duplicates found')
 
-df.to_csv("final_reviews.csv",index=False)
+df.to_csv("cronos_reviews.csv",index=False)
