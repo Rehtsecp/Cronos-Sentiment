@@ -1,4 +1,6 @@
-![alt text](image.jpg)
+![Cronos Logo](rehtsecp.github.com/Cronos-Sentiment/img/logo.png)
+
+
 # Cronos-Sentiment
 
 Repository for our automated process of our internship assignment of Epic Data. <br>
