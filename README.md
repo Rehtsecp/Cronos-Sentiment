@@ -11,7 +11,9 @@ Link to our full project: [Cronos Sentiment Analysis](https://github.com/davidwo
 
 ## Usage
 This is an repository with an GitHub Workflow, accesible via the **Actions** tab.
-The Workflow is called **'Update data'**, this workflow will check for new reviews **every sunday at 00:00**.
+The workflow is called **'Update data'**, this workflow will check for new reviews **every sunday at 00:00**.
 
 ### Running the workflow manually
 1. Go to [Actions](https://github.com/Rehtsecp/Cronos-Sentiment/actions/workflows/main.yml)
+2. Click on **Run workflow**.
+![alt text](img/workflow1.png)
