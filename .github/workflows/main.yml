@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# This is a workflow that will allow to scrape Cronos reviews at a certain time. It will also allow us to auto update our CSV file on GitHub.
 
 name: Update data
 
@@ -16,20 +16,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-    
+        # Setting up a Python Environment on the Ubuntu image
       - name: Set up Python 3.9
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
-
+          
+        # Installing all the necessary packages for the scraper
       - name: Install dependencies
         run: | 
           pip install -r requirements.txt
           python -m nltk.downloader vader_lexicon
-
-      - name: Update local files
+          
+        # Scraping the reviews for Cronos on Glassdoor
+      - name: Scraping reviews
         run: python3 scraper_1p.py
-
+        
+        # Auto update CSV file
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
