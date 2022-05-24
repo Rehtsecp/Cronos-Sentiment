@@ -6,7 +6,6 @@ id,company,opinion,date,rating,source,score,sentiment
 4,ASTENA,Ok,2021/10/29,5,google,0.296,positive
 5,ASTENA,We are very disappointed in this company overall. REVAN BV,29/07/2021,1,google,-0.5256,negative
 6,ASTENA,"Looking for software for your construction or installation company, but you do not know how to get started. Collect a lot of info on this site.",29/04/2018,5,google,0.0,neutral
-<<<<<<< HEAD
 7,Arxus,"Flat Structure cool business atmosphere -pleasant employee -like remuneration Fine Work Events, Flexdesk Policysoms too informal structure",18/02/2019,5,glassdoor,0.836,positive
 8,Arxus,Custom professional IT solutions.,01/01/2018,5,google,0.1779,positive
 9,Arxus,Belgian cloud at its best!,01/01/2017,5,google,0.6696,positive
