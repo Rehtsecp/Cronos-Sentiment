@@ -11,7 +11,7 @@ num_dup = df.duplicated().sum()
 
 print(f"{num_dup} duplicates found")
 
-df.drop_duplicates(inplace=True)
+df.drop_duplicates(subset="opinion", inplace=True)
 
 df.reset_index(
     inplace=True,
