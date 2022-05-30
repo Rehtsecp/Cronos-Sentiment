@@ -18,7 +18,7 @@ def extract():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36"
     }  # For additional information with request
     # List of URL's with Cronos Review page on Glassdoor, it contains a link to the FR, NL & EN version of the page.
-    url = f"hhttps://nl.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=nld"
+    url = f"https://nl.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=nld"
     # url = f"https://www.glassdoor.co.uk/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=eng"
     # url = f"https://fr.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=fra"
     r = requests.get(url, headers=headers)
