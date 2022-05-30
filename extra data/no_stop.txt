@@ -149,7 +149,6 @@ low
 salary
 
 Nice
-working
 atmosphere
 Herentals
 office
@@ -233,9 +232,6 @@ monthly
 conversation
 coordinator
 
-1
-1
-
 
 everything
 Optionally
@@ -243,7 +239,6 @@ Optionally
 discussed
 
 
-lot
 attention
 personal
 growth
