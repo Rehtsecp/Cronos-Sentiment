@@ -31,9 +31,9 @@ jobs:
         # Scraping the reviews for Cronos on Glassdoor
       - name: Scraping reviews
         run: |
-          python3 gd_en.py
-          python3 gd_fr.py
-          python3 gd_nl.py
+          python3 Scrapers/gd_en.py
+          python3 Scrapers/gd_fr.py
+          python3 Scrapers/gd_nl.py
         
         # Auto update CSV file
       - name: Commit files
