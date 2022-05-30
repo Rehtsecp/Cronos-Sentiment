@@ -10,7 +10,7 @@ from tqdm.notebook import tqdm
 sia = SentimentIntensityAnalyzer()
 
 df = pd.read_csv("cronos_reviews.csv")
-id = df["id"].iloc[-1]
+id = df["index"].iloc[-1]
 
 # Function for extracting the page
 def extract():
