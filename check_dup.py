@@ -3,14 +3,15 @@ import pandas as pd
 
 df = pd.read_csv("cronos_reviews.csv")
 
-num_dup = df.duplicated().sum()
-print(f"{num_dup} duplicates found")
-
 df = df.astype("str")
 
 df = df.drop(["index"], axis=1)
 
-df.drop_duplicates(subset="opinion", inplace=True)
+num_dup = df.duplicated().sum()
+
+print(f"{num_dup} duplicates found")
+
+df.drop_duplicates(inplace=True)
 
 df.reset_index(
     inplace=True,
