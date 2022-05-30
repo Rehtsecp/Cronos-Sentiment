@@ -1,22 +1,20 @@
+from re import sub
 import pandas as pd
 
-df = pd.read_csv("cronos_reviews.csv") 
+df = pd.read_csv("cronos_reviews.csv")
 
-old_count = df.shape[0]
+num_dup = df.duplicated().sum()
+print(f"{num_dup} duplicates found")
 
-df = df.drop(["id"], axis=1)
+df = df.astype("str")
 
-df.drop_duplicates(subset=None, inplace=True)
+df = df.drop(["index"], axis=1)
 
-df.reset_index(inplace=True)
+df.drop_duplicates(subset="opinion", inplace=True)
 
-df.columns = ['id','company','opinion','date','rating','source','score','sentiment']
+df.reset_index(
+    inplace=True,
+)
 
-new_count = df.shape[0]
 
-dups = old_count - new_count
-
-if dups <= 0: print('No duplicates found!')
-else: print(f'{dups} duplicates found')
-
-df.to_csv("cronos_reviews.csv",index=False)
+df.to_csv("cronos_reviews.csv", index=False)
