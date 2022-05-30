@@ -18,9 +18,9 @@ def extract():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.41 Safari/537.36"
     }  # For additional information with request
     # List of URL's with Cronos Review page on Glassdoor, it contains a link to the FR, NL & EN version of the page.
-    # url = f"hhttps://nl.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=nld"
+    url = f"hhttps://nl.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=nld"
     # url = f"https://www.glassdoor.co.uk/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=eng"
-    url = f"https://fr.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=fra"
+    # url = f"https://fr.glassdoor.be/Reviews/Cronos-Reviews-E871033.htm?sort.sortType=RD&sort.ascending=false&filter.iso3Language=fra"
     r = requests.get(url, headers=headers)
     soup = BeautifulSoup(r.content, "html.parser")
     return soup
@@ -33,9 +33,14 @@ def transform(soup):
 
     # Going over each review in the div
     for item in divs:
-        rating = item.find(
+        t_id = id
+
+        new_id = t_id + 1
+
+        raw_rating = item.find(
             "span", class_="ratingNumber mr-xsm"
         ).text.strip()  # Get Rating
+        clean_rating = raw_rating.replace('.0', '')
         author_info = item.find(
             "span", class_="authorJobTitle"
         ).text.strip()  # Get AuthorInfo
@@ -61,7 +66,7 @@ def transform(soup):
         translator = Translator()
         opinion_tr = translator.translate(opinion).text  # Get only the translated text
 
-        new_id = int(id) + 1  # Assigning an id
+         # Assigning an id
 
         # Giving the opinion an compound score and sentiment
         score = sia.polarity_scores(opinion_tr)["compound"]
@@ -78,8 +83,8 @@ def transform(soup):
             "company": "Cronos",
             "opinion": opinion_tr,
             "date": date_clean_str,
-            "rating": rating,
-            "source": "glassdoor",
+            "rating": clean_rating,
+            "source": "Glassdoor",
             "score": score,
             "sentiment": sentiment,
         }
