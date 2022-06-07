@@ -27,4 +27,14 @@ Wait a max. of 1 minute to allow it to complete the whole process of scraping, a
 Now you should be able to find the new reviews in **cronos_reviews.csv**.
 
 ### EXTRA
-If you want to check if the script found new reviews and/or if there were any duplicates found. Follow these steps
+If you want to check if the script found new reviews and/or if there were any duplicates found. 
+
+1. Click on **Update data**
+![Extra 1](img/extra1.png)
+
+2. Click on **execute**
+![Extra 2](img/extra2.png)
+
+3. Click on **Check duplicates**
+![Extra 3](img/extra3.png)
+Here you'll see how many duplicates and new reviews were found.
