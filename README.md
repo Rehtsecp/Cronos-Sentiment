@@ -4,10 +4,12 @@ Repository for our automated process of our internship assignment of Epic Data. 
 Link to our full project: [Cronos Sentiment Analysis](https://github.com/davidwong19/cronos-sentiment-analyse.git)
 
 ## Short Introduction
-1. **gd_scraper.py**: Script for scraping, calculating score and assigning sentiment for the new reviews.
-2. **check_dup.py**: This python script will check for duplicates, after running above script.
-3. **requirements.txt**: A text file containing the required packages for running both scripts, needed for running our workflow.
-4. **cronos_reviews.csv**: Our csv file containing all our gathered reviews, from different sources.
+1. **Scrapers**: This folder contains the scrapers for the 3 languages on GlassDoor.
+2. **Scrapers**: This folder contains extra data needed for our dashboard.
+3. **img**: This folder contains images needed for our dashboard and for our README.md.
+4. **check_dup.py**: This python script will check for duplicates, after running above script.
+5. **requirements.txt**: A text file containing the required packages for running both scripts, needed for running our workflow.
+6. **cronos_reviews.csv**: Our csv file containing all our gathered reviews, from different sources.
 
 ## Usage
 This is an repository with an GitHub Workflow, accesible via the **Actions** tab.
