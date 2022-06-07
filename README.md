@@ -36,5 +36,5 @@ If you want to check if the script found new reviews and/or if there were any du
 ![Extra 2](img/extra2.png)
 
 3. Click on **Check duplicates**
-![Extra 3](img/extra3.png)
+![Extra 3](img/x3.png)
 Here you'll see how many duplicates and new reviews were found.
