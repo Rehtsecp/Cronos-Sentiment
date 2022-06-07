@@ -4,7 +4,7 @@ import pandas as pd
 
 df = pd.read_csv("cronos_reviews.csv")
 
-old_count = len(df.index)
+old_count = len(df.index) 
 
 df = df.astype("str")
 
@@ -23,8 +23,10 @@ df.reset_index(
 )
 
 new_count = len(df.index)
+
 diff_count = new_count - old_count
 
-print(f'Found {diff_count} new review(s)')
+if diff_count < 0: print(print(f'Found 0 new review(s)'))
+else: print(f'Found {diff_count} new review(s)')
 
 df.to_csv("cronos_reviews.csv", index=False)
