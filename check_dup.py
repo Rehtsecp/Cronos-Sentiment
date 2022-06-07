@@ -1,7 +1,10 @@
+from hashlib import new
 from re import sub
 import pandas as pd
 
 df = pd.read_csv("cronos_reviews.csv")
+
+old_count = len(df.index)
 
 df = df.astype("str")
 
@@ -19,5 +22,9 @@ df.reset_index(
     inplace=True,
 )
 
+new_count = len(df.index)
+diff_count = new_count - old_count
+
+print(f'Found {diff_count} new review(s)')
 
 df.to_csv("cronos_reviews.csv", index=False)
