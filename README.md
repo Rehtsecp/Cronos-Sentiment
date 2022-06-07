@@ -24,4 +24,4 @@ The workflow is called **'Update data'**, this workflow will check for new revie
 Wait a max. of 1 minute to allow it to complete the whole process of scraping, assigning score/sentiment and to update the csv file.
 ![Complete](img/w4.png)
 
-Now you should be able to find the new reviews in 
+Now you should be able to find the new reviews in **cronos_reviews.csv**.
