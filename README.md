@@ -21,5 +21,7 @@ The workflow is called **'Update data'**, this workflow will check for new revie
 ![Run Workflow 2](img/workflow2.png)
 5. After waiting a couple seconds, you'll see an orange loading icon, that means the process is starting
 ![Start Workflow](img/w3.png)
-1. Wait a max. of 1 minute to allow it to complete the whole process of scraping, assigning score/sentiment and to update the csv file.
+Wait a max. of 1 minute to allow it to complete the whole process of scraping, assigning score/sentiment and to update the csv file.
 ![Complete](img/w4.png)
+
+Now you should be able to find the new reviews in **cronos_reviews.csv**.
