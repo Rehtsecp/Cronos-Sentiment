@@ -16,11 +16,12 @@ print(f"{num_dup} duplicates found")
 
 df.drop_duplicates(subset="opinion", inplace=True)
 
-df = df.replace('\r\n','. ', regex=True)
 
 df.reset_index(
     inplace=True,
 )
+
+df = df.replace('\r\n','. ', regex=True)
 
 new_count = len(df.index)
 
