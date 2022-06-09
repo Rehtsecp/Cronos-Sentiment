@@ -4,7 +4,7 @@ Repository for our automated process of our internship assignment of Epic Data. 
 Link to our full project: [Cronos Sentiment Analysis](https://github.com/davidwong19/cronos-sentiment-analyse.git)
 
 ## Short Introduction
-1. **Scrapers**: This folder contains the scrapers for the 3 languages on GlassDoor.
+1. **Scrapers**: This folder contains the scrapers for the 3 languages on Glassdoor.
 2. **Scrapers**: This folder contains extra data needed for our dashboard.
 3. **img**: This folder contains images needed for our dashboard and for our README.md.
 4. **check_dup.py**: This python script will check for duplicates, after running above script.
