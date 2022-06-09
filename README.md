@@ -16,6 +16,7 @@ This is an repository with an GitHub Workflow, accesible via the **Actions** tab
 The workflow is called **'Update data'**, this workflow will check for new reviews **every sunday at 00:00**.
 This can be changed, by changing the cron schedule expression, in the `main.yml`. This is located in this repository at **/.github/workflows/main.yml**.
 Below you can find a handy tool, to get the correct cron schedule expression.
+
 [CRONTAB](https://crontab.guru/#0_0_*_*_0)
 
 ### Running the workflow manually
