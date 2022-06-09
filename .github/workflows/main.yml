@@ -43,7 +43,9 @@ jobs:
           git commit -m "Update data" -a
       
       - name: Check duplicates
-        run: python3 check_dup.py
+        run: |
+          python3 check_dup.py
+          python3 check_dup.py
         
         # Auto update CSV file after checking for duplicates
       - name: Commit files
